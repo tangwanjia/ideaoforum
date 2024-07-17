@@ -18,6 +18,22 @@ class DatabaseSeeder extends Seeder
         User::factory()->create([
             'name' => 'Test User',
             'email' => 'test@example.com',
+            'password' => Hash::make('password')
         ]);
+
+        User::factory(9)->create();
+
+        // $this->call([
+        //     usersSeeder::class
+        // ]);
+
+        $this->call([
+            PostSeeder::class
+        ]);
+
+        $this->call([
+            commentSeeder::class
+        ]);
+
     }
 }
